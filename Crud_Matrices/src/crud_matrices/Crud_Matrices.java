@@ -43,7 +43,14 @@ public class Crud_Matrices {
 
     }
 
-    public void actualizarIndice(int indice) {
+    public void actualizarIndice() {
+
+        int indiceFilas = Integer.parseInt(JOptionPane.showInputDialog("ingrese el indice de la fila a modificar"));
+        int indiceColumnas = Integer
+                .parseInt(JOptionPane.showInputDialog("ingrese el indice de la columna a modificar"));
+
+        matriz[indiceFilas][indiceColumnas] = Integer
+                .parseInt(JOptionPane.showInputDialog("ingrese el numero de la fila a modificar"));
 
     }
 
