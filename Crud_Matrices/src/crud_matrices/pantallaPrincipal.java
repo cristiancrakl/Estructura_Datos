@@ -34,6 +34,7 @@ public class pantallaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
+    // <editor-fold defaultstate="collapsed" desc="Generated
     // Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -41,6 +42,12 @@ public class pantallaPrincipal extends javax.swing.JFrame {
         DeleteBTN = new javax.swing.JButton();
         ReadBTN = new javax.swing.JButton();
         UpdateBTN = new javax.swing.JButton();
+        Text1 = new javax.swing.JTextField();
+        Text2 = new javax.swing.JTextField();
+        jLabelFila = new javax.swing.JLabel();
+        jLabelColumna = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -72,11 +79,54 @@ public class pantallaPrincipal extends javax.swing.JFrame {
             }
         });
 
+        Text1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Text1ActionPerformed(evt);
+            }
+        });
+
+        Text2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Text2ActionPerformed(evt);
+            }
+        });
+
+        jLabelFila.setText("jLabel1");
+
+        jLabelColumna.setText("jLabel2");
+
+        jLabel3.setText("indice Fila");
+
+        jLabel4.setText("indice columna");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
+                                .addGap(14, 14, 14)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 83,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(Text2, javax.swing.GroupLayout.PREFERRED_SIZE, 71,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(jLabelColumna, javax.swing.GroupLayout.PREFERRED_SIZE, 37,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(0, 0, Short.MAX_VALUE))
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                        javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(Text1, javax.swing.GroupLayout.PREFERRED_SIZE, 71,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(jLabelFila, javax.swing.GroupLayout.PREFERRED_SIZE, 37,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(182, 182, 182))))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addContainerGap(40, Short.MAX_VALUE)
                                 .addComponent(CreateBTN)
                                 .addGap(18, 18, 18)
@@ -89,7 +139,22 @@ public class pantallaPrincipal extends javax.swing.JFrame {
         layout.setVerticalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addContainerGap(193, Short.MAX_VALUE)
+                                .addGap(47, 47, 47)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(Text1, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabelFila)
+                                        .addComponent(jLabel3))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(Text2, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabelColumna)
+                                        .addComponent(jLabel4))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 84,
+                                        Short.MAX_VALUE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(CreateBTN)
                                         .addComponent(DeleteBTN)
@@ -100,25 +165,37 @@ public class pantallaPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void Text1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_Text1ActionPerformed
+
+        if (Text1.equals("")) {
+
+        }
+
+    }// GEN-LAST:event_Text1ActionPerformed
+
+    private void Text2ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_Text2ActionPerformed
+
+    }// GEN-LAST:event_Text2ActionPerformed
+
     private void CreateBTNActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_CreateBTNActionPerformed
 
-        logica.crearVector();
+        logica.crearMatriz();
 
     }
 
     private void DeleteBTNActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_DeleteBTNActionPerformed
 
-        int indiceVector = Integer
-                .parseInt(JOptionPane.showInputDialog("ingrese el indice del vector que desea borrar"));
+        logica.eliminarIndice();
     }
 
     private void ReadBTNActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_ReadBTNActionPerformed
 
-        logica.leerVector();
+        logica.leerMatriz();
     }// GEN-LAST:event_ReadBTNActionPerformed
 
     private void UpdateBTNActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_UpdateBTNActionPerformed
-        // TODO add your handling code here:
+
+        logica.actualizarIndice();
     }// GEN-LAST:event_UpdateBTNActionPerformed
 
     /**
@@ -154,6 +231,12 @@ public class pantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton CreateBTN;
     private javax.swing.JButton DeleteBTN;
     private javax.swing.JButton ReadBTN;
+    private javax.swing.JTextField Text1;
+    private javax.swing.JTextField Text2;
     private javax.swing.JButton UpdateBTN;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabelColumna;
+    private javax.swing.JLabel jLabelFila;
     // End of variables declaration//GEN-END:variables
 }

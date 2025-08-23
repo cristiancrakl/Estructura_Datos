@@ -16,12 +16,12 @@ public class Crud_Matrices {
 
     public void crearMatriz() {
 
-        int columnasMatriz = Integer.parseInt(JOptionPane.showInputDialog("ingrese el grande del vector"));
-        int filasMatriz = Integer.parseInt(JOptionPane.showInputDialog("ingrese el grande del vector"));
+        int columnasMatriz = Integer.parseInt(JOptionPane.showInputDialog("ingrese el grande de las filas"));
+        int filasMatriz = Integer.parseInt(JOptionPane.showInputDialog("ingrese el grande de columnas"));
         matriz = new double[filasMatriz][columnasMatriz];
 
-        for (int i = 0; i < matriz.length; i++) {
-            for (int e = 0; e < matriz.length; e++) {
+        for (int i = 0; i < filasMatriz; i++) {
+            for (int e = 0; e < columnasMatriz; e++) {
 
                 matriz[i][e] = Integer
                         .parseInt(
@@ -33,13 +33,20 @@ public class Crud_Matrices {
 
         }
 
-        JOptionPane.showMessageDialog(null, "Su Matriz con tamaño " + columnasMatriz + filasMatriz + " fue creado");
+        JOptionPane.showMessageDialog(null,
+                "Su Matriz con tamaño " + columnasMatriz + " , " + filasMatriz + " fue creado");
 
     }
 
-    public void eliminarIndice(int indiceFilas, int indiceColumnas) {
+    public void eliminarIndice() {
+
+        int indiceFilas = Integer.parseInt(JOptionPane.showInputDialog("ingrese el indice de la fila a modificar"));
+        int indiceColumnas = Integer
+                .parseInt(JOptionPane.showInputDialog("ingrese el indice de la columna a modificar"));
 
         matriz[indiceFilas][indiceColumnas] = 0;
+
+        JOptionPane.showMessageDialog(null, "indice borrado con exito");
 
     }
 
@@ -54,10 +61,10 @@ public class Crud_Matrices {
 
     }
 
-    public void leerVector() {
+    public void leerMatriz() {
 
         for (int i = 0; i < matriz.length; i++) {
-            for (int e = 0; e < matriz.length; e++) {
+            for (int e = 0; e < matriz[i].length; e++) {
 
                 System.out.println(matriz[i][e]);
 
