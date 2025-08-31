@@ -47,8 +47,8 @@ public class Elecciones {
 
         int votos = 0;
 
-        for (int i = 0; i < matriz.length; i++) {
-            for (int j = 0; j < matriz.length; j++) {
+        for (int i = 0; i < nombreCandidato.length; i++) {
+            for (int j = 0; j < nombreMesa.length; j++) {
 
                 votos += matriz[i][j];
 
@@ -62,10 +62,10 @@ public class Elecciones {
 
     public void candidatoMasVotado() {
 
-        int[] votosPorCadidatos = new int[matriz.length + 1];
+        int[] votosPorCadidatos = new int[nombreCandidato.length];
 
-        for (int i = 0; i < matriz.length; i++) {
-            for (int j = 0; j < matriz.length; j++) {
+        for (int i = 0; i < nombreMesa.length; i++) {
+            for (int j = 0; j < nombreMesa.length; j++) {
 
                 votosPorCadidatos[i] += matriz[i][j];
 
@@ -101,10 +101,10 @@ public class Elecciones {
 
     public void promedioVotosMesa() {
 
-        int[] votosPorMesas = new int[matriz.length + 1];
+        int[] votosPorMesas = new int[nombreMesa.length];
 
-        for (int i = 0; i < matriz.length; i++) {
-            for (int j = 0; j < matriz.length; j++) {
+        for (int i = 0; i < nombreMesa.length; i++) {
+            for (int j = 0; j < nombreCandidato.length; j++) {
 
                 votosPorMesas[i] += matriz[j][i];
 
@@ -123,10 +123,10 @@ public class Elecciones {
 
     public void mesaMasVotada() {
 
-        int[] votosPorMesas = new int[matriz.length + 1];
+        int[] votosPorMesas = new int[nombreMesa.length];
 
-        for (int i = 0; i < matriz.length; i++) {
-            for (int j = 0; j < matriz.length; j++) {
+        for (int i = 0; i < nombreMesa.length; i++) {
+            for (int j = 0; j < nombreCandidato.length; j++) {
 
                 votosPorMesas[j] += matriz[j][i];
 
@@ -162,10 +162,10 @@ public class Elecciones {
 
     public void votosPorCadidato() {
 
-        int[] votosPorCadidato = new int[matriz.length + 1];
+        int[] votosPorCadidato = new int[nombreCandidato.length];
 
-        for (int i = 0; i < matriz.length; i++) {
-            for (int j = 0; j < matriz.length; j++) {
+        for (int i = 0; i < nombreCandidato.length; i++) {
+            for (int j = 0; j < nombreMesa.length; j++) {
 
                 votosPorCadidato[i] += matriz[i][j];
 

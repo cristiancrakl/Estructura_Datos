@@ -216,7 +216,7 @@ public class Menu extends javax.swing.JFrame {
     private void ingresarResultadosBTNActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_ingresarResultadosBTNActionPerformed
 
         int nCandidatos = Integer.parseInt(inputCandidatos.getText());
-        int nMesas = Integer.parseInt(inputCandidatos.getText());
+        int nMesas = Integer.parseInt(inputMesas.getText());
 
         elecciones.crearArrays(nCandidatos, nMesas);
     }// GEN-LAST:event_ingresarResultadosBTNActionPerformed
