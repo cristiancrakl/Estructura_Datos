@@ -171,30 +171,59 @@ public class Elecciones {
             }
         }
 
-        int mesaMasVotado = 0;
+        boolean hayEmpate = false;
+        int numeroDeEmpatados = 0;
+        int mesaMasVotada = 0;
 
+        for (int i = 1; i < votosPorMesas.length; i++) {
+
+            if (votosPorMesas[0] == votosPorMesas[i]) {
+
+                numeroDeEmpatados++;
+
+            }
+
+        }
         for (int i = 0; i < votosPorMesas.length; i++) {
 
-            if (mesaMasVotado < votosPorMesas[i]) {
+            if (mesaMasVotada < votosPorMesas[i]) {
 
-                mesaMasVotado = votosPorMesas[i];
+                mesaMasVotada = votosPorMesas[i];
 
             }
 
         }
 
-        int mesaIndex = 0;
+        if (numeroDeEmpatados > 0) {
+            if (mesaMasVotada == votosPorMesas[0]) {
 
-        for (int i = 0; i < votosPorMesas.length; i++) {
-            if (mesaMasVotado == votosPorMesas[i]) {
-                mesaIndex = i;
+                hayEmpate = true;
 
             }
+
         }
 
-        JOptionPane.showMessageDialog(null,
-                "la mesa que saco mas votos fue la mesa " + nombreMesa[mesaIndex] + " con una votacion de:"
-                        + mesaMasVotado);
+        if (hayEmpate == false) {
+
+            int mesaIndex = 0;
+
+            for (int i = 0; i < votosPorMesas.length; i++) {
+                if (mesaMasVotada == votosPorMesas[i]) {
+                    mesaIndex = i;
+
+                }
+            }
+
+            JOptionPane.showMessageDialog(null,
+                    "la mesa que saco mas votos fue la mesa " + nombreMesa[mesaIndex] + " con una votacion de:"
+                            + mesaMasVotada);
+
+        } else {
+
+            JOptionPane.showMessageDialog(null,
+                    (numeroDeEmpatados + 1) + " mesas tuvieron el mismo resultado ");
+
+        }
 
     }
 
