@@ -64,7 +64,7 @@ public class Elecciones {
 
         int[] votosPorCadidatos = new int[nombreCandidato.length];
 
-        for (int i = 0; i < nombreMesa.length; i++) {
+        for (int i = 0; i < nombreCandidato.length; i++) {
             for (int j = 0; j < nombreMesa.length; j++) {
 
                 votosPorCadidatos[i] += matriz[i][j];
@@ -72,8 +72,19 @@ public class Elecciones {
             }
         }
 
+        boolean hayEmpate = false;
+        int numeroDeEmpatados = 0;
         int candidatoMasVotado = 0;
 
+        for (int i = 1; i < votosPorCadidatos.length; i++) {
+
+            if (votosPorCadidatos[0] == votosPorCadidatos[i]) {
+
+                numeroDeEmpatados++;
+
+            }
+
+        }
         for (int i = 0; i < votosPorCadidatos.length; i++) {
 
             if (candidatoMasVotado < votosPorCadidatos[i]) {
@@ -84,18 +95,45 @@ public class Elecciones {
 
         }
 
-        int candidatoIndex = 0;
+        if (numeroDeEmpatados > 0) {
+            if (candidatoMasVotado == votosPorCadidatos[0]) {
 
-        for (int i = 0; i < votosPorCadidatos.length; i++) {
-            if (candidatoMasVotado == votosPorCadidatos[i]) {
-                candidatoIndex = i;
+                hayEmpate = true;
 
             }
+
         }
 
-        JOptionPane.showMessageDialog(null,
-                "el candidato que saco mas votos fue " + nombreCandidato[candidatoIndex] + " con una votacion de:"
-                        + candidatoMasVotado);
+        if (hayEmpate == false) {
+
+            for (int i = 0; i < votosPorCadidatos.length; i++) {
+
+                if (candidatoMasVotado < votosPorCadidatos[i]) {
+
+                    candidatoMasVotado = votosPorCadidatos[i];
+
+                }
+
+            }
+
+            int candidatoIndex = 0;
+
+            for (int i = 0; i < votosPorCadidatos.length; i++) {
+                if (candidatoMasVotado == votosPorCadidatos[i]) {
+                    candidatoIndex = i;
+
+                }
+            }
+
+            JOptionPane.showMessageDialog(null,
+                    "el candidato que saco mas votos fue " + nombreCandidato[candidatoIndex] + " con una votacion de:"
+                            + candidatoMasVotado);
+
+        } else {
+            JOptionPane.showMessageDialog(null,
+                    (numeroDeEmpatados + 1) + " candidatos tuvieron el mismo resultado asi que es un empate");
+
+        }
 
     }
 
@@ -114,8 +152,8 @@ public class Elecciones {
         int promedioVotos = 0;
         for (int i = 0; i < votosPorMesas.length; i++) {
 
-            JOptionPane.showMessageDialog(null, "el promedio de votos de la " + (nombreMesa[i]) + " es igual:"
-                    + (promedioVotos = votosPorMesas[i] / matriz.length));
+            JOptionPane.showMessageDialog(null, "el promedio de votos de la mesa" + (nombreMesa[i]) + " es igual:"
+                    + (promedioVotos = votosPorMesas[i] / nombreCandidato.length));
 
         }
 
@@ -128,7 +166,7 @@ public class Elecciones {
         for (int i = 0; i < nombreMesa.length; i++) {
             for (int j = 0; j < nombreCandidato.length; j++) {
 
-                votosPorMesas[j] += matriz[j][i];
+                votosPorMesas[i] += matriz[j][i];
 
             }
         }

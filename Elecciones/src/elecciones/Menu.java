@@ -29,6 +29,7 @@ public class Menu extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
+    // <editor-fold defaultstate="collapsed" desc="Generated
     // Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -43,6 +44,7 @@ public class Menu extends javax.swing.JFrame {
         promedioVotosMesaBTN = new javax.swing.JButton();
         mesaMasVotada = new javax.swing.JButton();
         votosPorCandidatoBTN = new javax.swing.JButton();
+        SiguenteBTN = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -106,6 +108,13 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
+        SiguenteBTN.setText("Next page");
+        SiguenteBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SiguenteBTNActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -131,32 +140,45 @@ public class Menu extends javax.swing.JFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(layout.createSequentialGroup()
                                                 .addGap(136, 136, 136)
-                                                .addComponent(jLabel1))
+                                                .addComponent(jLabel1)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
+                                                        javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(SiguenteBTN))
                                         .addGroup(layout.createSequentialGroup()
-                                                .addGap(21, 21, 21)
-                                                .addGroup(layout
-                                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                        .addComponent(inputCandidatos,
-                                                                javax.swing.GroupLayout.PREFERRED_SIZE, 71,
-                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addComponent(inputMesas,
-                                                                javax.swing.GroupLayout.PREFERRED_SIZE, 71,
-                                                                javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                .addGap(44, 44, 44)
                                                 .addGroup(layout
                                                         .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addComponent(jLabel3)
-                                                        .addComponent(jLabel2)
-                                                        .addComponent(ingresarResultadosBTN)))
-                                        .addGroup(layout.createSequentialGroup()
-                                                .addGap(111, 111, 111)
-                                                .addComponent(votosPorCandidatoBTN)))
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
+                                                        .addGroup(layout.createSequentialGroup()
+                                                                .addGap(21, 21, 21)
+                                                                .addGroup(layout.createParallelGroup(
+                                                                        javax.swing.GroupLayout.Alignment.TRAILING)
+                                                                        .addComponent(inputCandidatos,
+                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                                71,
+                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                        .addComponent(inputMesas,
+                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                                71,
+                                                                                javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                                .addGap(44, 44, 44)
+                                                                .addGroup(layout.createParallelGroup(
+                                                                        javax.swing.GroupLayout.Alignment.LEADING)
+                                                                        .addComponent(jLabel3)
+                                                                        .addComponent(jLabel2)
+                                                                        .addComponent(ingresarResultadosBTN)))
+                                                        .addGroup(layout.createSequentialGroup()
+                                                                .addGap(111, 111, 111)
+                                                                .addComponent(votosPorCandidatoBTN)))
+                                                .addGap(0, 0, Short.MAX_VALUE)))
+                                .addContainerGap()));
         layout.setVerticalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addGap(35, 35, 35)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel1)
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addContainerGap()
+                                                .addComponent(SiguenteBTN)))
+                                .addGap(22, 22, 22)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(inputCandidatos, javax.swing.GroupLayout.PREFERRED_SIZE,
                                                 javax.swing.GroupLayout.DEFAULT_SIZE,
@@ -184,6 +206,15 @@ public class Menu extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void SiguenteBTNActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_SiguenteBTNActionPerformed
+
+        Menu2 menu2 = new Menu2();
+
+        menu2.show();
+
+        dispose();
+    }// GEN-LAST:event_SiguenteBTNActionPerformed
 
     private void promedioVotosMesaBTNActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_promedioVotosMesaBTNActionPerformed
         elecciones.promedioVotosMesa();
@@ -251,6 +282,7 @@ public class Menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton SiguenteBTN;
     private javax.swing.JButton candidatoMasVotadoBTN;
     private javax.swing.JButton cantidadVotantesBTN;
     private javax.swing.JButton ingresarResultadosBTN;

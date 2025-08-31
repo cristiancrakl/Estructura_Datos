@@ -1,0 +1,31 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Current File",
+      "request": "launch",
+      "mainClass": "${file}"
+    },
+    {
+      "type": "java",
+      "name": "Menu",
+      "request": "launch",
+      "mainClass": "elecciones.Menu",
+      "projectName": "Elecciones_2b9d201c"
+    },
+    {
+      "type": "java",
+      "name": "Menu2",
+      "request": "launch",
+      "mainClass": "elecciones.Menu2",
+      "projectName": "Elecciones_2b9d201c"
+    },
+    {
+      "name": "Attach by com.sun.jdi.SharedMemoryListen",
+      "type": "jdk",
+      "request": "attach",
+      "listen": "${command:jdk.java.attachDebugger.connector.com.sun.jdi.SharedMemoryListen.listen}"
+    }
+  ]
+}
