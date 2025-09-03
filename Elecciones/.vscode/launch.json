@@ -3,6 +3,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "Menu",
+      "request": "launch",
+      "mainClass": "elecciones.Menu",
+      "projectName": "Elecciones_b15ab4db"
+    },
+    {
+      "type": "java",
       "name": "Current File",
       "request": "launch",
       "mainClass": "${file}"
